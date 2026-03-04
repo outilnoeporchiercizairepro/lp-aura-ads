@@ -40,6 +40,21 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // A/B Testing Logic
+    let variant = localStorage.getItem('ab_variant');
+    if (!variant) {
+        variant = Math.random() < 0.5 ? 'A' : 'B'; // A: With Phone, B: No Phone
+        localStorage.setItem('ab_variant', variant);
+    }
+
+    const phoneGroup = document.getElementById('phone-group');
+    const telInput = document.getElementById('tel');
+
+    if (variant === 'B' && phoneGroup && telInput) {
+        phoneGroup.style.display = 'none';
+        telInput.removeAttribute('required');
+    }
+
     // Lead Capture Modal Logic
     const modal = document.getElementById('leadModal');
     const videoTrigger = document.getElementById('videoTrigger');
@@ -77,8 +92,13 @@ document.addEventListener('DOMContentLoaded', () => {
             prenom: document.getElementById('prenom').value,
             nom: document.getElementById('nom').value,
             email: document.getElementById('email').value,
-            tel: document.getElementById('tel').value
+            variant: variant // Track the A/B variant
         };
+
+        // Add phone if variant A
+        if (variant === 'A') {
+            leadData.tel = document.getElementById('tel').value;
+        }
 
         // Send to Webhook
         try {
