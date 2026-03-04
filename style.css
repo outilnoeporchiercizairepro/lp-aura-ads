@@ -388,6 +388,14 @@ section {
     max-width: 1000px;
 }
 
+@media (max-width: 992px) {
+    .fan-deck {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}
+
 .member-card-wrapper {
     position: relative;
     width: 100%;
@@ -713,4 +721,11 @@ section {
         grid-template-columns: 1fr;
     }
 
+    .hero {
+        padding: 4rem 0 2rem 0;
+    }
+
+    .section-title {
+        margin-bottom: 3rem;
+    }
 }
