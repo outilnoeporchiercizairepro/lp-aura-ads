@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
+html,
+body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+}
+
 :root {
     --bg-color: #020617;
     --primary-accent: #FF00FF;
@@ -24,12 +31,15 @@ html {
     scroll-behavior: smooth;
 }
 
+html,
 body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
     background-color: var(--bg-color);
     color: var(--text-main);
     font-family: var(--font-main);
     line-height: 1.6;
-    overflow-x: hidden;
 }
 
 /* Background Halos */
@@ -391,8 +401,8 @@ section {
 @media (max-width: 992px) {
     .fan-deck {
         grid-template-columns: 1fr;
-        max-width: 400px;
-        margin: 0 auto;
+        gap: 2rem;
+        padding: 0 1rem;
     }
 }
 
@@ -722,10 +732,15 @@ section {
     }
 
     .hero {
-        padding: 4rem 0 2rem 0;
+        padding: 9rem 1.5rem 3rem 1.5rem;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
     }
 
     .section-title {
-        margin-bottom: 3rem;
+        margin-bottom: 2.5rem;
+        font-size: 1.8rem;
     }
 }
