@@ -464,14 +464,6 @@ section {
     padding: 2rem;
 }
 
-.card-color-overlay {
-    position: absolute;
-    inset: 0;
-    opacity: 0.2;
-    mix-blend-mode: overlay;
-    pointer-events: none;
-}
-
 .member-name {
     font-size: 1.5rem;
     font-weight: 800;
@@ -489,14 +481,6 @@ section {
 
 .member-card-wrapper:nth-child(even) .member-role {
     color: var(--secondary-accent);
-}
-
-.color-primary {
-    background: var(--primary-accent);
-}
-
-.color-secondary {
-    background: var(--secondary-accent);
 }
 
 .btn-more {
